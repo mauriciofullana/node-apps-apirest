@@ -68,7 +68,7 @@ router.post('/signin', async (req, res) => {
                 error: ""
             });
         } catch (err) {
-            return res.status(422).send({
+            return res.send({
                 status: constants.RESPONSE_STATUS_ERROR,
                 error: constants.AUTH_RESPONSE.ERROR_INVALID_CREDENTIALS
             });
