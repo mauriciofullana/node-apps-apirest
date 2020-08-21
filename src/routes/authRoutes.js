@@ -35,6 +35,7 @@ router.post('/signin', async (req, res) => {
 	try {
 		const { userName, password } = req.body;
 
+		// UserName and Password required validation
 		if (!userName || !password) {
 			return res.status(422).send({
 				status: constants.RESPONSE_STATUS_ERROR,
@@ -43,6 +44,8 @@ router.post('/signin', async (req, res) => {
 		}
 
 		const user = await User.findOne({ userName });
+
+		// User exists validation
 		if (!user) {
 			return res.send({
 				status: constants.RESPONSE_STATUS_ERROR,

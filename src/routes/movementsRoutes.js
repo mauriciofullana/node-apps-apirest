@@ -7,9 +7,9 @@ var constants = require('../models/Constants');
 
 const router = express.Router();
 
-router.use(requierAuth);
+// router.use(requierAuth);
 
-router.get('/movements', async (req, res) => {
+router.get('/movements', requierAuth, async (req, res) => {
 	try {
 		const movements = await Movements.find({ userId: req.user._id });
 		res.send({
@@ -25,7 +25,7 @@ router.get('/movements', async (req, res) => {
 	}
 });
 
-router.post('/movement', async (req, res) => {
+router.post('/movement', requierAuth, async (req, res) => {
 	try {
 		const movement = new Movements(
 			({ holder, reference, amount, isDebit } = req.body)
