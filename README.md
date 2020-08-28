@@ -1,2 +1,2 @@
 # apps-server
-Express API
+Express Rest API connected to cloud mongoDB
