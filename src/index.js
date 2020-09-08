@@ -1,11 +1,13 @@
 require('./models/User');
 require('./models/Movements');
+require('./models/Products');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const movementsRoutes = require('./routes/movementsRoutes');
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productsRoutes');
 const requierAuth = require('./middlewares/requireAuth');
 
 const app = express();
@@ -16,6 +18,7 @@ app.use(bodyParser.json());
 app.use(authRoutes);
 app.use(userRoutes);
 app.use(movementsRoutes);
+app.use(productRoutes);
 
 const mongoUri =
 	'mongodb+srv://admin:Password01@cluster0.j9t0v.mongodb.net/<dbname>?retryWrites=true&w=majority';
