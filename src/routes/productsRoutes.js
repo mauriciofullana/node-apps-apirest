@@ -11,10 +11,10 @@ const router = express.Router();
 
 router.get('/products', requierAuth, async (req, res) => {
 	try {
-		const movements = await Products.find({ userId: req.user._id });
+		const products = await Products.find({ userId: req.user._id });
 		res.send({
 			status: constants.RESPONSE_STATUS_SUCCESS,
-			movements,
+			products,
 			error: '',
 		});
 	} catch (err) {
