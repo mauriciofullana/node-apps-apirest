@@ -28,7 +28,7 @@ router.get('/movements', requierAuth, async (req, res) => {
 router.post('/movement', requierAuth, async (req, res) => {
 	try {
 		const movement = new Movements(
-			({ holder, reference, amount, isDebit } = req.body)
+			({ holder, reference, amount, isDebit, productId } = req.body)
 		);
 
 		movement.userId = req.user._id;
