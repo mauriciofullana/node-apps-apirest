@@ -1,7 +1,7 @@
 # Node.js Express Rest Api for Finance App
 Express Rest API connected to cloud mongoDB
 
-ROAD MAP FUNCTIONALITIES:
+ROADMAP FUNCTIONALITIES:
 
 - Sign Up
 - Sign In
